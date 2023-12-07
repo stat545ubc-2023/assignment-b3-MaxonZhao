@@ -4,7 +4,7 @@
 The "Car Models" Shiny app provides an interactive way to explore the `mtcars` dataset, now enhanced with new features for a more comprehensive analysis. This dataset contains data about various car models, including fuel consumption, horsepower, and weight. The app is user-friendly, ideal for automotive enthusiasts and professionals.
 
 ## Live Application
-Access the liven version the preivous app here: [Car Models Shiny App - assignment3b](https://yuefengzhao.shinyapps.io/assignment4/)
+Access the liven version the preivous app here: [Car Models Shiny App - assignment3b](https://yuefengzhao.shinyapps.io/assignment3/)
 
 Access the live version of the app here: [Car Models Shiny App - assignment4](https://yuefengzhao.shinyapps.io/assignment4/)
 
