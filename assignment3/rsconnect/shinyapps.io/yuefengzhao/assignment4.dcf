@@ -1,12 +1,12 @@
-name: assignment3
-title: assignment3
+name: assignment4
+title: assignment4
 username: yuefengzhao
 account: yuefengzhao
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
-appId: 10614879
-bundleId: 8018724
-url: https://yuefengzhao.shinyapps.io/assignment3/
+appId: 10740892
+bundleId: 8018722
+url: https://yuefengzhao.shinyapps.io/assignment4/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
