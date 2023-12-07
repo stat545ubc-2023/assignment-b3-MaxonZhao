@@ -1,23 +1,22 @@
+
 # Define UI
 ui <- fluidPage(
-  titlePanel("Enhanced Shiny App with mtcars Dataset"),
+  titlePanel("Simple Shiny App with mtcars Dataset"),
   sidebarLayout(
     sidebarPanel(
+      # Feature 1: Dropdown menu to select a variable
+      # This feature allows users to interactively choose which variable from the dataset they want to analyze.
       selectInput("variable", "Choose a variable:",
-                  choices = colnames(mtcars)),
-      hr(),
-      checkboxGroupInput("cylFilter", "Filter by Cylinders:",
-                         choices = unique(mtcars$cyl)),
-      sliderInput("gearFilter", "Select Gear Range:",
-                  min = min(mtcars$gear), max = max(mtcars$gear),
-                  value = c(min(mtcars$gear), max(mtcars$gear)),
-                  step = 1)
+                  choices = colnames(mtcars))
     ),
     mainPanel(
+      # Feature 2: Display basic statistics of the selected variable
+      # This feature provides a quick summary of the selected variable, giving insights like mean and median, which are useful for basic data analysis.
       verbatimTextOutput("summaryStat"),
-      selectInput("plotType", "Select Plot Type:",
-                  choices = c("Histogram" = "hist", "Boxplot" = "box")),
-      plotOutput("customPlot")
+      
+      # Feature 3: Simple plot of the selected variable
+      # A histogram is a fundamental visualization tool that helps in understanding the distribution of data points for the selected variable.
+      plotOutput("histPlot")
     )
   )
 )
@@ -25,36 +24,19 @@ ui <- fluidPage(
 # Define server logic
 server <- function(input, output) {
   
-  filteredData <- reactive({
-    data <- mtcars
-    if (!is.null(input$cylFilter) && !length(input$cylFilter) == 0) {
-      data <- data[data$cyl %in% input$cylFilter, ]
-    }
-    data <- data[data$gear >= input$gearFilter[1] & data$gear <= input$gearFilter[2], ]
-    data
-  })
-  
   output$summaryStat <- renderText({
     var <- input$variable
-    data <- filteredData()[[var]]
+    data <- mtcars[[var]]
     summaryStats <- paste("Mean:", mean(data, na.rm = TRUE),
-                          "Median:", median(data, na.rm = TRUE),
-                          "Standard Deviation:", sd(data, na.rm = TRUE),
-                          "Variance:", var(data, na.rm = TRUE),
-                          "Range:", paste(range(data, na.rm = TRUE), collapse = "-"))
+                          "Median:", median(data, na.rm = TRUE))
     summaryStats
   })
   
-  output$customPlot <- renderPlot({
+  output$histPlot <- renderPlot({
     var <- input$variable
-    data <- filteredData()[[var]]
-    if(input$plotType == "hist") {
-      hist(data, main = paste("Histogram of", var),
-           xlab = var, border = "blue", col = "green")
-    } else if(input$plotType == "box") {
-      boxplot(data, main = paste("Boxplot of", var),
-              ylab = var, col = "orange")
-    }
+    data <- mtcars[[var]]
+    hist(data, main = paste("Histogram of", var),
+         xlab = var, border = "blue", col = "green")
   })
 }
 
