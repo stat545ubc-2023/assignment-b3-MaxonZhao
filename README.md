@@ -1,21 +1,25 @@
 # Car Models Shiny App
 
 ## App Description
-The "Car Models" Shiny app provides an interactive way to explore the `mtcars` dataset, which contains data about various car models. Users can select different variables like miles per gallon (`mpg`), number of cylinders (`cyl`), and others to view their statistics and distribution. The app is designed to be intuitive and user-friendly, making data exploration accessible to both enthusiasts and professionals in the automotive industry.
+The "Car Models" Shiny app provides an interactive way to explore the `mtcars` dataset, now enhanced with new features for a more comprehensive analysis. This dataset contains data about various car models, including fuel consumption, horsepower, and weight. The app is user-friendly, ideal for automotive enthusiasts and professionals.
 
 ## Live Application
 Access the live version of the app here: [Car Models Shiny App](https://yuefengzhao.shinyapps.io/assignment3/)
 
 ## Dataset Source
-This application utilizes the `mtcars` dataset, which is a classic dataset available in R. It comprises various measurements for different car models, including fuel consumption, horsepower, and weight. The dataset is widely used for demonstrations in statistical analysis and data visualization.
+The app utilizes the `mtcars` dataset, a classic dataset in R. It’s widely used for statistical analysis and data visualization demonstrations.
 
 ### Data Access
-The `mtcars` dataset is included in R by default, and no additional steps are required to access it. For more details about this dataset, you can use the command `?mtcars` in R.
+The `mtcars` dataset is included in R by default. For more details, use the command `?mtcars` in R.
+
+## New Features
+1. **Filtering Functionality:** Users can now filter the dataset based on criteria like number of cylinders (`cyl`) and gear type (`gear`), providing more focused analysis.
+2. **Extended Statistical Summaries:** The app now offers extended statistics, including standard deviation, variance, and range, along with mean and median for deeper insights.
+3. **Interactive Plot Customizations:** Users can select different plot types (histogram or boxplot) and customize plot aesthetics, enhancing the data visualization experience.
 
 ## Using the App
-- Select a variable from the dropdown menu to analyze, such as `mpg` (miles per gallon), `cyl` (number of cylinders), or others.
-- Upon selection, the app will display key statistics like the mean and median for the chosen variable.
-- A histogram showing the distribution of the selected variable will also be displayed.
-- Explore different variables to gain insights into the dataset.
-
-
+- **Select a Variable:** Choose variables like `mpg` (miles per gallon), `cyl` (number of cylinders), etc., from the dropdown menu for analysis.
+- **Apply Filters:** Use the newly added filters to refine the dataset based on specific criteria.
+- **View Extended Statistics:** The app displays comprehensive statistics of the selected variable.
+- **Customize and View Plots:** Select the plot type and customize it to better visualize the data distribution.
+- **Explore and Analyze:** Leverage these new features to gain deeper insights into the `mtcars` dataset.
